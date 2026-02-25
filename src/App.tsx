@@ -10,7 +10,7 @@ function App() {
   return (
     <>  
       {/* Comments */}
-      <div className='border border-red-500 p-2'>
+      <div className='mb-3 flex justify-end'>
         <CommentBox />
       </div>
 
@@ -19,7 +19,7 @@ function App() {
         <input
           type='text'
           placeholder='Add a comment...'
-          className='w-full pb-14 flex items-start border border-gray-300 rounded-md px-5 py-2 placeholder:text-gray-500 placeholder:text-sm'
+          className='w-full pb-14 flex items-start border border-grey-100 rounded-md px-5 py-2 placeholder:text-grey-500 placeholder:text-sm'
         />
 
         {/* Avatar and Send Button */}
@@ -28,7 +28,7 @@ function App() {
             <img src={`${julioAvatar}`} />
           </div>
 
-          <button className='px-5 py-2 rounded-md bg-[#5457B6]'>
+          <button className='px-5 py-2 rounded-md bg-purple-600'>
             <span className='text-sm text-white'>SEND</span>
           </button>
         </div>
