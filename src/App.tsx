@@ -5,13 +5,29 @@ import data from '../data.json'
 import CommentBox from './components/CommentBox'
 
 function App() {
+  // 'currentUser' avatar
   const julioAvatar = data.currentUser.image.png
+
+  const commentsList = data.comments
+  console.log(data.comments[1].replies)
 
   return (
     <>  
       {/* Comments */}
-      <div className='mb-3 flex justify-end'>
-        <CommentBox />
+      <div className='mb-3 flex flex-col items-end gap-3'>
+        {
+          commentsList.map((comment) => (
+            <CommentBox
+              key={comment.id}
+              avatar={comment.user.image.png}
+              username={comment.user.username}
+              date={comment.createdAt}
+              comment={comment.content}
+              score={comment.score}
+              replies={comment.replies}
+            />
+          ))
+        }
       </div>
 
       {/* Comments Input */}
